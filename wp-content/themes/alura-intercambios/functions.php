@@ -1,4 +1,19 @@
 <?php
+function alura_intercambios_registrando_post_customizado(){
+    register_post_type(
+        'destino',
+        array(
+            'labels' => array('name' => 'Destinos'),
+            'public' => true,
+            'menu_position' => 0,
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'menu_icon' => 'dashicons-admin-site'
+        )
+    );
+}
+add_action('init', 'alura_intercambios_registrando_post_customizado');
+
+
 function alura_intercambios_adicionando_recursos_ao_tema(){
     add_theme_support('custom-logo');
     add_theme_support('post-thumbnails');
